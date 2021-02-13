@@ -1,5 +1,5 @@
 class Author 
-    attr_accessor :name 
+  attr_accessor :name 
   
   @@post_count = 0 
   
@@ -8,4 +8,6 @@ class Author
     @posts = []
   end
   
+  def posts
+    Post.all.select 
 end

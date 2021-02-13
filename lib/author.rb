@@ -12,19 +12,20 @@ class Author
     Post.all.select {|post| post.author = self}
   end
   
-  def add_song(song)
-    @@song_count += 1 
-    @songs << song 
-    song.artist = self
+  def add_post(post)
+    @@post_count += 1 
+    @posts << post 
+    post.author = self
   end
   
-  def add_song_by_name(name)
-    @@song_count += 1 
-    @songs << song 
-    song.artist = self 
+  def add_post_by_title(title)
+    @@post_count += 1 
+    n = Post.new(title) 
+    self.add_post(n)
+    n
   end
   
-  def self.song_count
-    @@songcount 
+  def self.post_count
+    @@post_count 
   end
 end
